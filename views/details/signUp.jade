@@ -1,0 +1,45 @@
+nav.navbar.navbar-light.bg-primary
+  ul.nav.navbar-nav(ng-controller='indexController')
+    li.nav-item.pull-xs-left(ng-hide='CommonRole')
+      a.btn.btn-primary.wid1(href='/signIn') Sign In
+    li.nav-item.pull-xs-left(ng-hide='CommonRole')
+      a.btn.btn-primary.wid1(href='/signUp') Sign Up
+    li.nav-item.pull-xs-left(ng-show='CommonRole')
+      a.btn.btn-primary.wid1(href='/signOut') Sign Out
+    li.nav-item
+      form.form-inline.pull-xs-right
+        input.form-control(ng-model='search' type="text" placeholder="Search")
+    li.nav-item.pull-xs-right
+      a.btn.btn-primary(href='/') Home
+    li.nav-item.active(ng-show='CommonRole')
+      a.btn.btn-primary(href='/addPost') Add a new post
+
+form.container.wid3
+  div.form-group
+    label(for='exampleInputName1') Name:
+    input.form-control#exampleInputName1(ng-model='form.name' type="text" placeholder="Name")
+    div.small.text-danger(ng-show='errNameFlag || errName()') {{errNameMessage}}
+  div.form-group
+    label(for="exampleInputPassword1") Password:
+    input.form-control#exampleInputPassword1(ng-model='form.password' type="password" placeholder="Password")
+    div.small.text-danger(ng-show='errPasswordFlag && errPassword()') {{errPasswordMessage}}
+  div.form-group
+    label(for="exampleInputPassword2") Repeat Password:
+    input.form-control#exampleInputPassword2(ng-model='form.repeat' type="password" placeholder="Repeat Password")
+    div.small.text-danger(ng-show='errRepeatFlag && errRepeat()') {{errRepeatMessage}}
+  div.form-group
+    label(for='exampleInputSid1') Sid:
+    input.form-control#exampleInputSid1(ng-model='form.sid' type="text" placeholder="Sid")
+    div.small.text-danger(ng-show='errSidFlag || errSid()') {{errSidMessage}}
+  div.form-group
+    label(for="exampleInputPhone1") Phone:
+    input.form-control#exampleInputPhone1(ng-model='form.phone' type="text" placeholder="Phone")
+    div.small.text-danger(ng-show='errPhoneFlag || errPhone()') {{errPhoneMessage}}
+  div.form-group
+    label(for="exampleInputEmail1") Email:
+    input.form-control#exampleInputEmail1(ng-model='form.email' type="text" placeholder="Email")
+    div.small.text-danger(ng-show='errEmailFlag || errEmail()') {{errEmailMessage}}
+  div.form-group
+    button.pull-xs-right.btn.btn-secondary(type='reset') Reset
+    button.pull-xs-right.btn.btn-primary(ng-click='signUp()') Sign Up
+

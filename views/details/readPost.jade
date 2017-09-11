@@ -1,0 +1,42 @@
+nav.navbar.navbar-light.bg-primary
+  ul.nav.navbar-nav(ng-controller='indexController')
+    li.nav-item.pull-xs-left(ng-hide='CommonRole')
+      a.btn.btn-primary.wid1(href='/signIn') Sign In
+    li.nav-item.pull-xs-left(ng-hide='CommonRole')
+      a.btn.btn-primary.wid1(href='/signUp') Sign Up
+    li.nav-item.pull-xs-left(ng-show='CommonRole')
+      a.btn.btn-primary.wid1(href='/signOut') Sign Out
+    li.nav-item
+      form.form-inline.pull-xs-right
+        input.form-control(ng-model='search' type="text" placeholder="Search")
+    li.nav-item.pull-xs-right
+      a.btn.btn-primary(href='/') Home
+    li.nav-item.active(ng-show='CommonRole')
+      a.btn.btn-primary(href='/addPost') Add a new post
+
+section.container.wid3
+  h3.h3 {{post.title}} 
+  span {{post.name}}:
+  div.lead(ng-show='post.show') {{post.text}}
+  div.text-danger(ng-hide='post.show') This post was hiden by adminor.
+  div.container(style="display: block;") Comments:
+    div(ng-repeat="comment in post.comments")
+      div.pull-xs-right.wid5 F{{comment.comment_num + 1}}.  {{comment.name}}:
+        div.container.wid4
+          span(ng-show='comment.show')  {{comment.text}}  
+          span.text-danger(ng-hide='comment.show')  This comment was hiden by adminor.  
+          span.small
+            a(ng-show='post.CommonRole && comment.ownership' href='/readPost/{{post_num}}/editComment/{{comment.comment_num}}') Edit
+            span(ng-show='post.CommonRole && comment.ownership') -
+            a(ng-show='post.CommonRole && comment.ownership' href='/readPost/{{post_num}}/deleteComment/{{comment.comment_num}}') Delete
+            span(ng-show='post.CommonRole && post.SuperRole')
+              span(ng-show='comment.ownership') -
+              a(ng-show='comment.show' href='/readPost/{{post_num}}' ng-click='ShowOrHideComment(comment.comment_num)') Hide
+              a(ng-hide='comment.show' href='/readPost/{{post_num}}' ng-click='ShowOrHideComment(comment.comment_num)') Show
+
+  div.container.wid3.bl
+    p Write a new comment:
+      textarea(ng-model='form.text', cols='80', rows='5')
+    p
+      button.pull-xs-right.btn.btn-primary(ng-click='submitComment(post.CommonRole)') Submit Comment
+

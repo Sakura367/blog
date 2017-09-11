@@ -1,0 +1,28 @@
+nav.navbar.navbar-light.bg-primary
+  ul.nav.navbar-nav(ng-controller='indexController')
+    li.nav-item.pull-xs-left(ng-hide='CommonRole')
+      a.btn.btn-primary.wid1(href='/signIn') Sign In
+    li.nav-item.pull-xs-left(ng-hide='CommonRole')
+      a.btn.btn-primary.wid1(href='/signUp') Sign Up
+    li.nav-item.pull-xs-left(ng-show='CommonRole')
+      a.btn.btn-primary.wid1(href='/signOut') Sign Out
+    li.nav-item
+      form.form-inline.pull-xs-right
+        input.form-control(ng-model='search' type="text" placeholder="Search")
+    li.nav-item.pull-xs-right
+      a.btn.btn-primary(href='/') Home
+    li.nav-item.active(ng-show='CommonRole')
+      a.btn.btn-primary(href='/addPost') Add a new post
+
+form.container.wid3
+  div.form-group
+    label(for='exampleInputName1') Name:
+    input.form-control#exampleInputName1(ng-model='form.name' placeholder="Name")
+    div.small.text-danger(ng-show='errFlag') {{errMessage}}
+  div.form-group
+    label(for="exampleInputPassword1") Password:
+    input.form-control#exampleInputPassword1(ng-model='form.password' type="password" placeholder="Password")
+  div.form-group
+    button.pull-xs-right.btn.btn-secondary(type='reset') Reset
+    button.pull-xs-right.btn.btn-primary(ng-click='signIn()') Sign In
+

@@ -1,0 +1,22 @@
+nav.navbar.navbar-light.bg-primary
+  ul.nav.navbar-nav(ng-controller='indexController')
+    li.nav-item.pull-xs-left(ng-hide='CommonRole')
+      a.btn.btn-primary.wid1(href='/signIn') Sign In
+    li.nav-item.pull-xs-left(ng-hide='CommonRole')
+      a.btn.btn-primary.wid1(href='/signUp') Sign Up
+    li.nav-item.pull-xs-left(ng-show='CommonRole')
+      a.btn.btn-primary.wid1(href='/signOut') Sign Out
+    li.nav-item
+      form.form-inline.pull-xs-right
+        input.form-control(ng-model='search' type="text" placeholder="Search")
+    li.nav-item.pull-xs-right
+      a.btn.btn-primary(href='/') Home
+    li.nav-item.active(ng-show='CommonRole')
+      a.btn.btn-primary(href='/addPost') Add a new post
+
+div.container.wid3
+  p.text-danger Are you sure you want to sign out?
+    p
+      button.btn.btn-secondary(ng-click='signOut()') Yes
+      button.btn.btn-primary(ng-click='home()') No thanks
+

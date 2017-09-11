@@ -1,0 +1,30 @@
+.wid1 {
+  width: 100px;
+}
+
+.wid2 {
+  width: 660px;
+}
+
+.wid3 {
+  width: 700px;
+}
+
+.wid4 {
+  width: 450px;
+}
+
+.wid5 {
+  width: 600px;
+}
+
+.bl {
+  display: block;
+}
+
+.fs1, .small {
+  font-size: 15pt;
+}
+
+
+
