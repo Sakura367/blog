@@ -1,6 +1,6 @@
 这一次使用本地的txt文件保存所有数据
 
-预设管理员账号及密码：name:yyfyyf, password:zzhzzh
+预设管理员账号及密码：name:yyfyyf, password:zzhzzh(管理员可以通过“Hide”隐藏任何用户的博客或评论)
 此外还有两个预设的普通用户，其一为name:zzhzzh, password: KOBE24
 
 关于用户的登录修改了一些逻辑，使之更符合一般的登录逻辑（以MA为例）
