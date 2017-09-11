@@ -1,15 +1,15 @@
-��һ��ʹ�ñ��ص�txt�ļ�������������
+这一次使用本地的txt文件保存所有数据
 
-Ԥ�����Ա�˺ż����룺name:yyfyyf, password:zzhzzh
-���⻹������Ԥ�����ͨ�û�����һΪname:zzhzzh, password: KOBE24
+预设管理员账号及密码：name:yyfyyf, password:zzhzzh
+此外还有两个预设的普通用户，其一为name:zzhzzh, password: KOBE24
 
-�����û��ĵ�¼�޸���һЩ�߼���ʹ֮������һ��ĵ�¼�߼�����MAΪ����
-�ٲ��ٽ���/?username�ĵ�½
-��ˢ�������ʱ���ټ�ס�û�
-��ע��ɹ�֮���Զ���ת��¼���棬�������Զ���¼�ɹ�
+关于用户的登录修改了一些逻辑，使之更符合一般的登录逻辑（以MA为例）
+①不再接受/?username的登陆
+②刷新浏览器时不再记住用户
+③注册成功之后自动跳转登录界面，而不是自动登录成功
 
-PS:ע����¼�ɹ�ʱ�����䳤����Ҫ����ǰ�˾�ʹ����MD5���ܣ����ܺ������˷�������
+PS:注册或登录成功时密码会变长，主要是在前端就使用了MD5加密，加密后再向后端发送数据
 
-PPS:ʹ�÷���������������������npm install��װ��������������npm start����
+PPS:使用方法——先在命令行输入npm install安装依赖包，再输入npm start运行
 
-PPPS:������ʱû�з�������ֻ��ͨ��localhost:8000�����з���
+PPPS:通过139.199.168.138:8000来进行访问
